@@ -1,13 +1,12 @@
-import { GoogleGenAI, Type } from "@google/genai";
-const apiKey = import.meta.env.VITE_GOOGLE_API_KEY;
-const ai = new GoogleGenAI({ apiKey });
+import googleai from "../googleentry";
+import { Type } from "@google/genai";
 
 const main = async (prompt) => {
-  if (!apiKey) {
-    throw new Error("Missing GOOGLE_API_KEY");
+  if (!googleai) {
+    throw new Error("Missing Google Authentication");
   }
   try {
-    const response = await ai.models.generateContent({
+    const response = await googleai.models.generateContent({
       model: "gemini-2.0-flash",
       contents: prompt,
       config: {

@@ -1,12 +1,18 @@
 import React from "react";
-import Text from "./components/Text";
-import GFunctions from "./components/GFunctions";
+// import MultiChat from "./components/MultiChat";
+// import Text from "./components/Text";
+// import GFunctions from "./components/GFunctions";
+// import GStreamText from "./components/GStreamText";
+import ModelChat from "./components/ModelChat";
 
 const App = () => {
   return (
     <>
-      <Text />
-      <GFunctions />
+      {/* <Text /> */}
+      {/* <GFunctions /> */}
+      {/* <GStreamText /> */}
+      {/* <MultiChat /> */}
+      <ModelChat />
     </>
   );
 };

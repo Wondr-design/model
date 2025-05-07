@@ -1,7 +1,3 @@
-import { GoogleGenAI, Type } from "@google/genai";
-const apiKey = import.meta.env.VITE_GOOGLE_API_KEY;
-const ai = new GoogleGenAI({ apiKey });
-
 const main = async () => {
   const prompt = `Note: Extract the event information from here:
   "Alice and Bob are going to a science fair on friday " using this JSON schema:
