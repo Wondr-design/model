@@ -3,7 +3,8 @@ import React from "react";
 // import Text from "./components/Text";
 // import GFunctions from "./components/GFunctions";
 // import GStreamText from "./components/GStreamText";
-import ModelChat from "./components/ModelChat";
+// import ModelChat from "./components/ModelChat";
+import GeneratePrompt from "./components/GeneratePrompt";
 
 const App = () => {
   return (
@@ -12,7 +13,8 @@ const App = () => {
       {/* <GFunctions /> */}
       {/* <GStreamText /> */}
       {/* <MultiChat /> */}
-      <ModelChat />
+      {/* <ModelChat /> */}
+      <GeneratePrompt />
     </>
   );
 };
