@@ -25,10 +25,16 @@ const ModelChat = () => {
 
     try {
       const reply = await main(prompt);
-      setResponses((prev) => [...prev, reply.join("\n")]);
+      setResponses((prev) => [
+        ...prev,
+        { user: prompt, model: reply.join("\n") },
+      ]);
     } catch (error) {
       console.error("Error in chat:", error);
-      setResponses((prev) => [...prev, "Error getting response."]);
+      setResponses((prev) => [
+        ...prev,
+        { user: prompt, model: "Error getting response." },
+      ]);
     } finally {
       setPrompt("");
     }
@@ -42,8 +48,17 @@ const ModelChat = () => {
         ref={responseRef}
       >
         {responses.map((res, index) => (
-          <div key={index} className="mb-4 whitespace-pre-wrap">
-            <strong>Model:</strong> {res}
+          <div key={index} className="mb-4">
+            <div className="flex justify-end">
+              <div className="bg-blue-600 text-white px-4 py-2 rounded-lg max-w-xs whitespace-pre-wrap">
+                {res.user}
+              </div>
+            </div>
+            <div className="flex justify-start mt-2">
+              <div className="bg-gray-700 text-white px-4 py-2 rounded-lg max-w-xs whitespace-pre-wrap">
+                {res.model}
+              </div>
+            </div>
           </div>
         ))}
       </div>
